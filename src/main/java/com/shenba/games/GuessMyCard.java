@@ -14,11 +14,11 @@ import java.util.List;
  */
 public class GuessMyCard {
     public static void main(String[] args) throws IOException {
-
-        List<String> cards = GuessMyCardService.getRandomCards(15);
+        int size = 15;
+        int count = (size / (3 * 2)) + 1;
+        List<String> cards = GuessMyCardService.getRandomCards(size);
         List<ArrayList<String>> deals;
         int set;
-        int count = 3;
 
         System.out.print("Choose a card from below and keep it in your mind:\n");
         cards.forEach(e -> System.out.print("[" + e + "] "));
