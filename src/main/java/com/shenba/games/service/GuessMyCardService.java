@@ -6,6 +6,9 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
+/**
+ * @author Shenbaga Murugan
+ */
 public class GuessMyCardService {
 
     public static List<ArrayList<String>> deal(List<String> cards, int count) {
