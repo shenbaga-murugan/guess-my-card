@@ -14,8 +14,13 @@ import java.util.List;
  */
 public class GuessMyCard {
     public static void main(String[] args) throws IOException {
-        int size = 15;
-        int count = (size / (3 * 2)) + 1;
+
+        // total number of cards to show - MUST BE AN ODD NUMBER
+        int size = 27;
+        // total number of heaps to deal - MUST BE AN ODD NUMBER
+        int dealCount = 3;
+
+        int timesToAsk = (size / (dealCount * 2)) + 1;
         List<String> cards = GuessMyCardService.getRandomCards(size);
         List<ArrayList<String>> deals;
         int set;
@@ -27,8 +32,8 @@ public class GuessMyCard {
         System.out.print("Guessed? Hit enter to continue!\n");
         reader.readLine();
 
-        for(int i = 0; i < count; i++) {
-            deals = GuessMyCardService.deal(cards, 3);
+        for(int i = 0; i < timesToAsk; i++) {
+            deals = GuessMyCardService.deal(cards, dealCount);
             printSets(deals);
             System.out.print("Enter set containing your guessed card: ");
             set = Integer.parseInt(reader.readLine());
